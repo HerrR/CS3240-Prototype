@@ -8,27 +8,33 @@ app.config(['$routeProvider',
 			controller: 'homeScreenCtrl',
 			activeTab: 'home'
 		}).
+		when('/booking', {
+			templateUrl: 'partials/booking.html',
+			controller: 'bookingCtrl',
+			activeTab: 'booking'
+		}).
+		when('/unlock', {
+			templateUrl: 'partials/unlock.html',
+			controller: 'unlockCtrl',
+			activeTab: 'unlock'
+		}).
+		when('/chooseDestination',{
+			templateUrl: 'partials/destinations.html',
+			controller: 'destinationCtrl',
+			activeTab: 'choose destination'
+		}).
+		when('/navigation',{
+			templateUrl: 'partials/navigation.html',
+			controller: 'navigationCtrl',
+			activeTab: 'navigation'
+		}).
 		otherwise({
 			redirectTo: "/"
 		})
-
-		// when('/login', {
-		// 	templateUrl: 'partials/login.html',
-		// 	controller: 'LoginCtrl',
-		// 	activeTab: 'login'
-		// }).
-		// when('/register', {
-		// 	templateUrl: 'partials/register.html',
-		// 	controller: 'LoginCtrl',
-		// 	activeTab: 'register'
-		// }).
-		// when('/viewStats', {
-		// 	templateUrl: 'partials/topic.html',
-		// 	controller: 'topicCtrl',
-		// 	activeTab: 'topic'
-		// }).
-		// otherwise({
-		// 	redirectTo: '/'
-		// })
 	}
-]);
+])
+// .
+// run(function($rootScope, $location, $cookies){
+// 		console.log("Route change!");
+// 	});
+// });
