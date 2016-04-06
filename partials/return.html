@@ -1,0 +1,13 @@
+<div class="returnInformation" ng-hide="userNotRetarded()">
+	<div class="info">
+		Information for dummies about how to return a bike.
+	</div>
+	<a ng-href="#/navigation"><button>Cancel</button></a>
+	<button ng-click="userIsRetarded(false)">Got it!</button>
+</div>
+
+<div class="QRscanning" ng-show="userNotRetarded()">
+	<div class="QRcontainer">QR code goes here</div>
+	<a ng-href="#/" ng-click="returnBike()">I am now pretending to scan a QR code</a>
+	<button ng-click="userIsRetarded(true)">Cancel</button>
+</div>

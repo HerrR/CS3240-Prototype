@@ -1,1 +1,25 @@
-This is the home screen!
+<div class="welcome" ng-show="showStartingpage('default')">
+	<img src="img/logotype.png" alt="Awesome Logo" class="logotype"/>
+	<div class="welcomeText">
+		Welcome to this cool app
+	</div>
+	<a ng-href="#/booking">
+		<button class="bottomButton">Let's get started!</button>
+	</a>
+</div>
+
+<div class="mainConfirmation" ng-show="showStartingpage('userHasBooking')">
+	<div class="mapContainer">Map goes here</div>
+	<div class="countDown">Seven days...</div>
+	<button ng-click="confirmCancellation()">Cancel</button>
+	<a ng-href="#/unlock"><button>Unlock</button></a>
+</div>
+
+<div class="rideInformation" ng-show="showStartingpage('ongoingRide')">
+	<div class="countDown">You have this much time left...</div>
+	<div class="bikeBatteryStatus">Your bike has {{ '10' }}% battery left</div>
+	<div class="actionButtons">
+		<a ng-href="#/destinations"><button>Book return station</button></a>
+		<a ng-href="#/return"><button>Return bike without booking</button></a>
+	</div>
+</div>

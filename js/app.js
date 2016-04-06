@@ -18,7 +18,7 @@ app.config(['$routeProvider',
 			controller: 'unlockCtrl',
 			activeTab: 'unlock'
 		}).
-		when('/chooseDestination',{
+		when('/destinations',{
 			templateUrl: 'partials/destinations.html',
 			controller: 'destinationCtrl',
 			activeTab: 'choose destination'
@@ -27,6 +27,16 @@ app.config(['$routeProvider',
 			templateUrl: 'partials/navigation.html',
 			controller: 'navigationCtrl',
 			activeTab: 'navigation'
+		}).
+		when('/confirm',{
+			templateUrl: 'partials/confirm.html',
+			controller: 'confirmCtrl',
+			activeTab: 'confirm'
+		}).
+		when('/return',{
+			templateUrl: 'partials/return.html',
+			controller: 'returnCtrl',
+			activeTab: 'return'
 		}).
 		otherwise({
 			redirectTo: "/"
