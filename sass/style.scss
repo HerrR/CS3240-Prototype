@@ -1,0 +1,47 @@
+// Sass variabler
+$someCoolColor: #fe0;
+
+
+// Mixin används genom att skriva @include namePåMixin(parametrar)
+
+@mixin standardBoxShadow(){
+	-webkit-box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
+	   -moz-box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
+			box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
+}
+
+@mixin customBoxShadow($v1, $v2, $v3, $v4, $v5){
+	-webkit-box-shadow: $v1 $v2 $v3 $v4 $v5;
+	   -moz-box-shadow: $v1 $v2 $v3 $v4 $v5;
+			box-shadow: $v1 $v2 $v3 $v4 $v5;
+}
+
+@mixin box-sizing($style){
+	-webkit-box-sizing: $style;
+	   -moz-box-sizing: $style;
+	 	-ms-box-sizing: $style;
+	  		box-sizing: $style;
+}
+
+.something {
+	@include box-sizing(border-box)
+}
+
+.somethingElse{
+	@extend .something;
+	font-size:1.5em;
+}
+
+.anotherThign {
+	img {
+
+	}
+
+	&:hover {
+
+	}
+
+	&:active {
+		
+	}
+}

@@ -1,0 +1,22 @@
+{
+  "name": "cs3240-prototype",
+  "version": "1.0.0",
+  "description": "Final prototype for the CS3240 Project at NUS",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rickard Bergeling, Josefine Martinsson",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.5.3",
+    "angular-cookie": "^4.1.0",
+    "angular-cookies": "^1.5.3",
+    "angular-route": "^1.5.3",
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jquery": "^2.2.3",
+    "normalize.css": "^4.0.0"
+  }
+}
