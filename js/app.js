@@ -60,7 +60,6 @@ app.config(['$routeProvider',
 .run(function($rootScope, $location, $cookies, Model){
 	$rootScope.$on( "$routeChangeStart", function(event, next, current) {
 		var routeRequirements = next.$$route.requirements;
-		console.log(routeRequirements);
 		
 		if(routeRequirements != null){
 			for(requirement in routeRequirements){

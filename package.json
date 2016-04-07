@@ -13,6 +13,7 @@
     "angular-cookie": "^4.1.0",
     "angular-cookies": "^1.5.3",
     "angular-route": "^1.5.3",
+    "font-awesome": "^4.5.0",
     "grunt": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
