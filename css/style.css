@@ -92,6 +92,7 @@ ul {
     width:90%;
     margin:auto;
     margin-top:20px;
+    text-align: center;
     /* To compensate for the fixed button at the bottom */
     margin-bottom:60px;
 }
@@ -117,6 +118,7 @@ img {
     border-bottom-color: #FEE2CE;
     padding: 2% 0% 2% 5%;
     font-size: 20px;
+    text-align: left;
 }
 
 .countDown {

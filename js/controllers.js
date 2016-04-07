@@ -182,10 +182,15 @@ app.controller('returnCtrl', function ($scope, Model, $location) {
     }
     $scope.userIsRetarded = function(val){
         $scope.retardedUser = val;
-        console.log($scope.retardedUser);
+        // console.log($scope.retardedUser);
     }
 
-    $scope.returnBike = function(){
-        Model.lockBike();
-    }
+    // $scope.returnBike = function(){
+        // Model.lockBike();
+        // $location.path("/success");
+    // }
+});
+
+app.controller('successCtrl', function ($scope, Model, $location) {
+    Model.lockBike();
 });

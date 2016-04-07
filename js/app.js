@@ -45,6 +45,12 @@ app.config(['$routeProvider',
 			redirectURL: '/',
 			requirements: ["activeBooking", "unlockedBike"]
 		}).
+		when('/success',{
+			templateUrl: 'partials/success.html',
+			controller: 'successCtrl',
+			redirectURL: '/',
+			requirements: null
+		}).
 		otherwise({
 			redirectTo: "/"
 		})
@@ -54,6 +60,7 @@ app.config(['$routeProvider',
 .run(function($rootScope, $location, $cookies, Model){
 	$rootScope.$on( "$routeChangeStart", function(event, next, current) {
 		var routeRequirements = next.$$route.requirements;
+		console.log(routeRequirements);
 		
 		if(routeRequirements != null){
 			for(requirement in routeRequirements){
