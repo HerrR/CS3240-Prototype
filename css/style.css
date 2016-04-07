@@ -38,11 +38,12 @@ ul {
 }
 
 .logotype {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
     display: block;
-    margin-top: 5%;
+    width: 50%;
+    margin:15% auto 40px auto;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*margin-top: 5%;*/
 }
 
 
@@ -72,18 +73,35 @@ ul {
     /* IE6-9 fallback on horizontal gradient */
     color: #FECDAC;
     border: none;
-    position: absolute;
+    position: fixed;
+    left:0;
     bottom: 0px;
     padding: 0;
     margin: 0;
+}
+
+.bottomButton.secondRow {
+    bottom:60px;
 }
 
 .QRscanning {
     width: 100%;
 }
 
+#container {
+    width:90%;
+    margin:auto;
+    margin-top:20px;
+    /* To compensate for the fixed button at the bottom */
+    margin-bottom:60px;
+}
+
 .welcome {
     height: 100%;
+}
+
+img {
+    max-width:100%;
 }
 
 .locationList {
@@ -121,8 +139,9 @@ ul {
 }
 
 .confirm {
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left:0;
     width: 100%;
 }
 
@@ -132,11 +151,12 @@ ul {
     border-right-color: #FC9D60;
 }
 
-.almostBottom {
-    bottom: 0;
-    position: absolute;
+.almostBottom button.bottomButton {
+    bottom: 60px;
+    left:0;
+    position: fixed;
     width: 100%;
-    margin-bottom: 60px;
+    /*margin-bottom: 60px;*/
     border-bottom-style: solid;
     border-bottom-width: 2px;
     border-bottom-color: #FC9D60;
