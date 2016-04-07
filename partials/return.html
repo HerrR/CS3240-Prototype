@@ -1,13 +1,19 @@
 <div class="returnInformation" ng-hide="userNotRetarded()">
-	<div class="info">
-		Information for dummies about how to return a bike.
-	</div>
-	<a ng-href="#/navigation"><button>Cancel</button></a>
-	<button ng-click="userIsRetarded(false)">Got it!</button>
+    <div class="info">
+        Information for dummies about how to return a bike.
+    </div>
+    <div class="confirm">
+        <a ng-href="#/navigation">
+            <button class="confirmButton yes"><i class="fa fa-chevron-left"></i> Cancel</button>
+        </a>
+        <button class="confirmButton" ng-click="userIsRetarded(false)">Got it! <i class="fa fa-chevron-right"></i></button>
+    </div>
 </div>
 
 <div class="QRscanning" ng-show="userNotRetarded()">
-	<div class="QRcontainer">QR code goes here</div>
-	<a ng-href="#/" ng-click="returnBike()">I am now pretending to scan a QR code</a>
-	<button ng-click="userIsRetarded(true)">Cancel</button>
+    <div class="QRcontainer">QR code goes here</div>
+    <a ng-href="#/" ng-click="returnBike()">I am now pretending to scan a QR code</a>
+    <div class="confirm">
+        <button class="backButton" ng-click="userIsRetarded(true)"><i class="fa fa-chevron-left"></i> Cancel</button>
+    </div>
 </div>

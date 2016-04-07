@@ -1,5 +1,14 @@
 This is the navigation screen!
-<a ng-href="#/return"><button>Return Bike</button></a>
-
-<a ng-href="#/destinations"><button>Change Destination</button></a>
-<a ng-href="#/"><button>Cancel Navigation</button></a>
+<a ng-href="#/return">
+    <div class="almostBottom">
+        <button class="bottomButton">Return Bike</button>
+    </div>
+</a>
+<div class="confirm">
+    <a ng-href="#/destinations">
+        <button class="confirmButton yes">Change Destination</button>
+    </a>
+    <a ng-href="#/">
+        <button class="confirmButton">Cancel Navigation</button>
+    </a>
+</div>

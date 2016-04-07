@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" ng-app="prototype">
-	<head>
-		<title>CS4240 Prototype</title>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" minimal-ui>
 
-		<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:200,400|Open+Sans:100,400,700|Lato:400,900' rel='stylesheet' type='text/css'>
+<head>
+    <title>CS4240 Prototype</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" minimal-ui>
 
-		<link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700|Raleway:200,400|Open+Sans:100,400,700|Lato:400,900' rel='stylesheet' type='text/css'>
 
-		<script src="node_modules/angular/angular.min.js"></script>
-		<script src="node_modules/angular-route/angular-route.min.js"></script>
-		<script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
-	    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-	    <script src="js/app.js"></script>
-	    <script src="js/model.js"></script>
-		<script src="js/controllers.js"></script>
 
-	</head>
-	<body ng-controller="AppCtrl">
-		<header>
-			<div class="projectName">Project name goes here</div>
-		</header>
-		<div id="container" ng-view></div>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+    <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
-		<div class="navStuff">
-			This stuff will not be included in the final prototype, it's just for dev navigation
-			<ul>
-				<li><a ng-href="#/">Home</a></li>
-				<li><a ng-href="#/booking">Booking</a></li>
-				<li><a ng-href="#/destinations">Destinations</a></li>
-				<li><a ng-href="#/navigation">Navigation</a></li>
-				<li><a ng-href="#/unlock">Unlock</a></li>
-			<ul/>
-		</div>
+    <script src="js/app.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/controllers.js"></script>
 
-	</body>
+</head>
+
+<body ng-controller="AppCtrl">
+    <header>
+        <div class="projectName">Project name goes here</div>
+    </header>
+    <div id="container" ng-view></div>
+
+    <div class="navStuff">
+        This stuff will not be included in the final prototype, it's just for dev navigation
+        <ul>
+            <li><a ng-href="#/">Home</a></li>
+            <li><a ng-href="#/booking">Booking</a></li>
+            <li><a ng-href="#/destinations">Destinations</a></li>
+            <li><a ng-href="#/navigation">Navigation</a></li>
+            <li><a ng-href="#/unlock">Unlock</a></li>
+            <ul/>
+    </div>
+
+</body>
+
 </html>
