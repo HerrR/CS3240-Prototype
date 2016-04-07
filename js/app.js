@@ -6,45 +6,71 @@ app.config(['$routeProvider',
 		when('/', {
 			templateUrl: 'partials/homeScreen.html',
 			controller: 'homeScreenCtrl',
-			activeTab: 'home'
+			redirectURL: '/',
+			requirements: null
 		}).
 		when('/booking', {
 			templateUrl: 'partials/booking.html',
 			controller: 'bookingCtrl',
-			activeTab: 'booking'
-		}).
-		when('/unlock', {
-			templateUrl: 'partials/unlock.html',
-			controller: 'unlockCtrl',
-			activeTab: 'unlock'
-		}).
-		when('/destinations',{
-			templateUrl: 'partials/destinations.html',
-			controller: 'destinationCtrl',
-			activeTab: 'choose destination'
-		}).
-		when('/navigation',{
-			templateUrl: 'partials/navigation.html',
-			controller: 'navigationCtrl',
-			activeTab: 'navigation'
+			redirectURL: '/',
+			requirements: null
 		}).
 		when('/confirm',{
 			templateUrl: 'partials/confirm.html',
 			controller: 'confirmCtrl',
-			activeTab: 'confirm'
+			redirectURL: '/booking',
+			requirements: ["activeBooking"]
+		}).
+		when('/unlock', {
+			templateUrl: 'partials/unlock.html',
+			controller: 'unlockCtrl',
+			redirectURL: '/',
+			requirements: ["activeBooking"]
+		}).
+		when('/destinations',{
+			templateUrl: 'partials/destinations.html',
+			controller: 'destinationCtrl',
+			redirectURL: '/',
+			requirements: ["activeBooking", "unlockedBike"]
+		}).
+		when('/navigation',{
+			templateUrl: 'partials/navigation.html',
+			controller: 'navigationCtrl',
+			redirectURL: '/',
+			requirements: ["activeBooking", "unlockedBike", "activeDestination"]
 		}).
 		when('/return',{
 			templateUrl: 'partials/return.html',
 			controller: 'returnCtrl',
-			activeTab: 'return'
+			redirectURL: '/',
+			requirements: ["activeBooking", "unlockedBike"]
 		}).
 		otherwise({
 			redirectTo: "/"
 		})
 	}
 ])
-// .
-// run(function($rootScope, $location, $cookies){
-// 		console.log("Route change!");
-// 	});
-// });
+// Comment this out to cancel navigation checks, might be useful for styling etc.
+.run(function($rootScope, $location, $cookies, Model){
+	$rootScope.$on( "$routeChangeStart", function(event, next, current) {
+		var routeRequirements = next.$$route.requirements;
+		
+		if(routeRequirements != null){
+			for(requirement in routeRequirements){
+				if(routeRequirements[requirement] == "activeBooking"){
+					if(jQuery.isEmptyObject(Model.getBooking().location)){
+						$location.path(next.$$route.redirectURL);
+					}
+				} else if(routeRequirements[requirement] == "unlockedBike"){
+					if(Model.getBooking().unlockedAt == null){
+						$location.path(next.$$route.redirectURL);
+					}
+				} else if(routeRequirements[requirement] == "activeDestination"){
+					if(Model.getDestination() == null){
+						$location.path(next.$$route.redirectURL);
+					}
+				}
+			}
+		}
+    });
+});

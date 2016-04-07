@@ -10,7 +10,12 @@
 
 <div class="mainConfirmation" ng-show="showStartingpage('userHasBooking')">
     <div class="mapContainer">Map goes here</div>
-    <div class="countDown">Seven days...</div>
+    
+    <div class="countDown" ng-hide="timesUp()">You have {{ timeleft.minutes }} minutes and {{timeleft.seconds }} seconds left to unlock your bike
+    </div>
+
+    <div class="warning" ng-show="showWarning()">You failed to pick up your bike in time, sorry!</div>
+
     <div class="confirm">
         <button class="confirmButton yes" ng-click="confirmCancellation()">Cancel</button>
         <a ng-href="#/unlock">
@@ -20,8 +25,11 @@
 </div>
 
 <div class="rideInformation" ng-show="showStartingpage('ongoingRide')">
-    <div class="countDown">You have this much time left...</div>
-    <div class="bikeBatteryStatus">Your bike has {{ '10' }}% battery left</div>
+    <div class="countDown" ng-hide="timesUp()">{{ timeleft.minutes }} minutes and {{ timeleft.seconds }} seconds left</div>
+    
+    <div class="warning" ng-show="showWarning()">Your ride has been ongoing for more than {{ msecToMinSec(timeConstraints.rentalTime).minutes }} minutes, {{ msecToMinSec(timeConstraints.rentalTime).seconds }} seconds.</div>
+
+    <div class="bikeBatteryStatus">Your bike has {{ booking().bike.battery }}% battery left</div>
     <div class="actionButtons confirm">
         <a ng-href="#/destinations">
             <button class="confirmButton yes">Book return station</button>
