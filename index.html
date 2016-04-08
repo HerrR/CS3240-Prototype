@@ -25,22 +25,23 @@
 </head>
 
 <body ng-controller="AppCtrl">
-    <header>
-        <div class="projectName">Project name goes here</div>
-    </header>
-    <div id="container" ng-view></div>
+    <div class="wrapper">
+        <header>
+            <div class="projectName">Project name goes here</div>
+        </header>
+        <div id="container" ng-view></div>
 
-    <div class="navStuff" style="display:none;">
-        This stuff will not be included in the final prototype, it's just for dev navigation
-        <ul>
-            <li><a ng-href="#/">Home</a></li>
-            <li><a ng-href="#/booking">Booking</a></li>
-            <li><a ng-href="#/destinations">Destinations</a></li>
-            <li><a ng-href="#/navigation">Navigation</a></li>
-            <li><a ng-href="#/unlock">Unlock</a></li>
-            <ul/>
+        <div class="navStuff" style="display:none;">
+            This stuff will not be included in the final prototype, it's just for dev navigation
+            <ul>
+                <li><a ng-href="#/">Home</a></li>
+                <li><a ng-href="#/booking">Booking</a></li>
+                <li><a ng-href="#/destinations">Destinations</a></li>
+                <li><a ng-href="#/navigation">Navigation</a></li>
+                <li><a ng-href="#/unlock">Unlock</a></li>
+                <ul/>
+        </div>
     </div>
-
 </body>
 
 </html>

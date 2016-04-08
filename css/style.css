@@ -88,6 +88,16 @@ ul {
     width: 100%;
 }
 
+.QRscanning img {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+
+.procedureInfo {
+    margin-bottom:20px;
+}
+
 #container {
     width:90%;
     margin:auto;
@@ -163,3 +173,79 @@ img {
     border-bottom-width: 2px;
     border-bottom-color: #FC9D60;
 }
+
+@media screen and (min-width: 768px) and (min-height: 500px) {
+    body {
+        -webkit-box-sizing:border-box;
+            moz-box-sizing:border-box;
+                box-sizing:border-box;
+        padding:5% 0;
+    }
+
+    .wrapper {
+        /*overflow: scroll;*/
+        overflow-y:auto;
+        margin:auto;
+        max-width:540px;
+        height:960px;
+        max-height:100%;
+        position: relative;
+        background-color:white;
+        -webkit-box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
+           -moz-box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
+                box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
+    }
+
+    #container {
+        position: relative;
+        width: 100%;
+        margin:0;
+        padding: 20px;
+        -webkit-box-sizing:border-box;
+            moz-box-sizing:border-box;
+                box-sizing:border-box;
+        padding-bottom:60px;
+        min-height:95%;
+    }
+
+    header {
+        height:5%;
+    }
+
+    .bottomButton,
+    .backButton,
+    .confirmButton,
+    .confirm {
+        bottom:0;
+        position: absolute;
+        /*border-right:1px solid #FECDAC;*/
+    }
+
+    .confirm {
+        position: initial;
+    }
+
+    .confirmButton.yes {
+        border-right:1px solid #FECDAC;
+        left:0%;
+    }
+
+    .confirmButton {
+        left:50%;
+    }
+
+    .almostBottom button.bottomButton {
+        position: absolute;
+        bottom:60px;
+    }
+    
+};
+
+/* Medium devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+};
+/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+
+};
