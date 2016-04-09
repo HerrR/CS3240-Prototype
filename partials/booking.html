@@ -5,12 +5,14 @@
 <div class="mapContainer">This container contains a map</div>
 
 <ul class="locationList" ng-repeat="location in locations">
-	<li class="location" ng-click="bookBike(location)">
-		<div class="infoBox">
-			Name: {{ location.name }} 
-		</div>
-		<div class="infoBox">
-			Available slots: {{ location.availableBikes.length }}
-		</div>
-	</li>
+    <li class="location" ng-click="bookBike(location)">
+        <div class="infoBox">
+            <!--Name:-->{{ location.name }} <span class="rightAlignCircle"> {{ location.availableBikes.length }}</span>
+        </div>
+        <!--
+        <div class="infoBox">
+            Available slots: {{ location.availableBikes.length }}
+        </div> 
+        -->
+    </li>
 </ul>

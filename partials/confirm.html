@@ -1,10 +1,11 @@
-Do you want to book a bike at {{ booking().location.name }}?
+<p class="largerText">Do you want to book a bike at {{ booking().location.name }}?</p>
+<p class="smallerText">The bike will stay booked for 15 minutes</p>
 
 <div class="confirm">
-	<a ng-href="#/">
+    <a ng-href="#/">
         <button class="confirmButton yes" ng-click="confirmBooking()">Yes</button>
-	</a>
-	<a ng-href="#/booking">
-    	<button class="confirmButton">No</button>
-	</a>
+    </a>
+    <a ng-href="#/booking">
+        <button class="confirmButton">No</button>
+    </a>
 </div>

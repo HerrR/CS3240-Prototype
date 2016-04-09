@@ -1,12 +1,14 @@
 <div class="mapContainer">Map with destinations and capacities goes here</div>
 
 <ul class="locationList" ng-repeat="destination in destinations">
-	<li class="location" ng-click="bookReturnAt(destination)">
-		<div class="infoBox">Name: {{destination.name}}</div>
-		<div class="infoBox">Available slots: {{ destination.numSlots - destination.availableBikes.length }}</div>
-	</li>
+    <li class="location" ng-click="bookReturnAt(destination)">
+        <div class="infoBox">
+            <!-- Name: -->{{destination.name}}
+            <span class="rightAlignCircle"> {{ destination.numSlots - destination.availableBikes.length }}</span></div>
+        <!--<div class="infoBox">Available slots: {{ destination.numSlots - destination.availableBikes.length }}</div>-->
+    </li>
 </ul>
 
 <a ng-href="#/">
-	<button class="bottomButton"><i class="fa fa-chevron-left"></i> Cancel</button>
+    <button class="bottomButton"><i class="fa fa-chevron-left"></i> Cancel</button>
 </a>
