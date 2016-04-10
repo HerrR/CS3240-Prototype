@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "angular": "^1.5.3",
+    "angular-animate": "^1.5.3",
     "angular-cookie": "^4.1.0",
     "angular-cookies": "^1.5.3",
     "angular-route": "^1.5.3",

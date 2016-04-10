@@ -3,18 +3,13 @@
     </button>
 </a>
 <div class="contain">
-    <div class="mapContainer">This container contains a map</div>
+    <div id="map"></div>
 
-    <ul class="locationList" ng-repeat="location in locations">
+    <ul class="locationList" ng-repeat="location in locations | orderBy: 'distance'">
         <li class="location" ng-click="bookBike(location)">
             <div class="infoBox">
-                <!--Name:-->{{ location.name }} <span class="rightAlignCircle"> {{ location.availableBikes.length }}</span>
+                {{ location.name }} <span class="rightAlignCircle"> {{ location.availableBikes.length }}</span>
             </div>
-            <!--
-        <div class="infoBox">
-            Available slots: {{ location.availableBikes.length }}
-        </div> 
-        -->
         </li>
     </ul>
 </div>

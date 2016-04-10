@@ -1,7 +1,15 @@
 app.factory('Model', function () {
 	var bikes = [];
+	var userPosition = null;
+	var initialUserPosition = {
+		latitude: 1.298734,
+		longitude: 103.772262
+	}
+	// var initialUserPosition = {latitude: 1.3052181999999999, longitude: 103.77421199999999};
+	var chargePerHourOverdue = 3;
+	var returnDestination = null;
+	var userPosition = initialUserPosition;
 
-	// Time constraints for reservation and rental in milliseconds
 	var timeConstraints = {
 		reservationTime: 15*60*1000,
 		rentalTime: 60*60*1000
@@ -21,53 +29,104 @@ app.factory('Model', function () {
 			id: 0,
 			name: "UTown",
 			numSlots: 40,
-			availableBikes: bikes.slice(0,21)
+			availableBikes: bikes.slice(0,20),
+			coordinates: {
+				latitude: 1.303511, 
+				longitude: 103.774223
+			},
+			distance: 0
 		},
 		{
 			id: 1,
 			name: "PGP",
 			numSlots: 30,
-			availableBikes: bikes.slice(21,40)
+			availableBikes: bikes.slice(20,40),
+			coordinates: {
+				latitude: 1.290807, 
+				longitude: 103.780311
+			},
+			distance: 0
 		},
 		{
 			id: 2,
 			name: "COM",
 			numSlots: 40,
-			availableBikes: bikes.slice(40,60)
+			availableBikes: bikes.slice(40,60),
+			coordinates: {
+				latitude: 1.294437, 
+				longitude: 103.773766
+			},
+			distance: 0
 		},
 		{
 			id: 3,
 			name: "Yusuf Ishak House",
 			numSlots: 30,
-			availableBikes: bikes.slice(60,85)
+			availableBikes: bikes.slice(60,85),
+			coordinates: {
+				latitude: 1.298991, 
+				longitude: 103.774710
+			},
+			distance: 0
 		},
 		{
 			id: 4,
 			name: "BIZ",
 			numSlots: 30,
-			availableBikes: bikes.slice(85,100)
+			availableBikes: bikes.slice(85,100),
+			coordinates: {
+				latitude: 1.292377, 
+				longitude: 103.774001
+			},
+			distance: 0
 		},
 		{
 			id: 5,
 			name: "Central Library",
 			numSlots: 50,
-			availableBikes: bikes.slice(100,115)
+			availableBikes: bikes.slice(100,115),
+			coordinates: {
+				latitude: 1.296847, 
+				longitude: 103.772880
+			},
+			distance: 0
 		}
 	];
 
-	var returnDestination = null;
+	console.log("Generated", bikes.length, "bikes and", bikeStations.length, "bike stations");
 
-	// console.log("Generated", bikes.length, "bikes and", bikeStations.length, "bike stations");
 	
 	var resetBooking = function(){
 		var booking = {
 			location: {},
 			bike: {},
+			bikeSlot: null,
 			bookedAt: null,
 			unlockedAt: null
 		}
 		return booking;
 	};
+
+	this.updateDistanceInfo = function(id, distance){
+		for(i in bikeStations){
+			if(bikeStations[i].id == id){
+				bikeStations[i].distance = distance;
+				// console.log("Updated distance for station ", bikeStations[i].name, " to ", distance);
+			}
+		}
+	}
+
+	this.getChargeRates = function(){
+		return chargePerHourOverdue;
+	};
+
+	this.setUserPosition = function(pos){
+		userPosition = pos;
+	}
+
+	this.getUserPosition = function(){
+		return userPosition;
+	}
 
 	this.setDestination = function(dest){
 		returnDestination = dest;
@@ -93,6 +152,7 @@ app.factory('Model', function () {
 		// console.log("Initializing booking for location ", loc, "and bike ", bike);
 		booking.location = loc;
 		booking.bike = bike;
+		booking.bikeSlot = Math.ceil(Math.random() * loc.numSlots);
 	};
 
 	this.confirmBooking = function(){
@@ -131,10 +191,6 @@ app.factory('Model', function () {
 
 	this.allStations = function(){
 		return bikeStations;
-	};
-
-	this.getStation = function(id){
-		return bikeStations[id];
 	};
 
 	var booking = resetBooking();

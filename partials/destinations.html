@@ -1,13 +1,11 @@
 <div class="contain">
+	<div id="map"></div>
 
-    <div class="mapContainer">Map with destinations and capacities goes here</div>
-
-    <ul class="locationList" ng-repeat="destination in destinations">
+    <ul class="locationList" ng-repeat="destination in destinations | orderBy: 'distance'">
         <li class="location" ng-click="bookReturnAt(destination)">
             <div class="infoBox">
-                <!-- Name: -->{{destination.name}}
+                {{destination.name}}
                 <span class="rightAlignCircle"> {{ destination.numSlots - destination.availableBikes.length }}</span></div>
-            <!--<div class="infoBox">Available slots: {{ destination.numSlots - destination.availableBikes.length }}</div>-->
         </li>
     </ul>
 </div>

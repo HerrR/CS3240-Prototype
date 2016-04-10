@@ -41,9 +41,6 @@ ul {
     display: block;
     width: 50%;
     margin: 15% auto 40px auto;
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*margin-top: 5%;*/
 }
 
 .infoText {
@@ -56,9 +53,6 @@ ul {
 .info > img {
     padding-top: 10%;
 }
-
-
-/*# sourceMappingURL=style.css.map */
 
 .projectName {
     background: #363636;
@@ -115,7 +109,6 @@ ul {
     margin: auto;
     margin-top: 20px;
     text-align: center;
-    /* To compensate for the fixed button at the bottom */
     margin-bottom: 60px;
 }
 
@@ -229,6 +222,8 @@ img {
     font-size: 18px;
     min-width: 20px;
 }
+
+#map { height: 400px; }
 
 @media screen and (min-width: 768px) and (min-height: 500px) {
     body {

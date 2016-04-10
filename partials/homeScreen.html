@@ -1,52 +1,9 @@
-<div class="welcome" ng-show="showStartingpage('default')">
-    <div class="contain">
-
-        <img src="img/logotype.png" alt="Awesome Logo" class="logotype" />
-        <div class="welcomeText">
-            <p class="infoText">Welcome to Ride NUS, the service which lets NUS students and staff borrow bikes, ride them on campus and then return them at their final destination. We have stands by the bus stations all over campus </p>
-        </div>
-    </div>
-    <a ng-href="#/booking">
-        <button class="bottomButton">Let's get started! <i class="fa fa-chevron-right"></i></button>
-    </a>
-</div>
-
-<div class="mainConfirmation" ng-show="showStartingpage('userHasBooking')">
-    <div class="contain">
-
-        <div class="mapContainer">Map goes here</div>
-
-        <div class="countDown" ng-hide="timesUp()">You have {{ timeleft.minutes }} minutes and {{timeleft.seconds }} seconds left to unlock your bike
-        </div>
-
-        <div class="warning" ng-show="showWarning()">You failed to pick up your bike in time, sorry!</div>
-    </div>
-    <div class="confirm">
-        <a ng-href="#/unlock">
-            <button class="confirmButton yes">Unlock</button>
-        </a>
-        <button class="confirmButton" ng-click="confirmCancellation()">Cancel</button>
+<div class="contain">
+    <img src="img/logotype.png" alt="Awesome Logo" class="logotype" />
+    <div class="welcomeText">
+        <p class="infoText">Welcome to Ride NUS, the service which lets NUS students and staff borrow bikes, ride them on campus and then return them at their final destination. We have stands by the bus stations all over campus </p>
     </div>
 </div>
-
-<div class="rideInformation" ng-show="showStartingpage('ongoingRide')">
-    <div class="contain">
-
-        <img src="img/bikeIcon.png" style="width:40%">
-        <div class="countDown" ng-hide="timesUp()"><b>{{ timeleft.minutes }} minutes and {{ timeleft.seconds }} seconds</b> left of free time to use bike</div>
-
-        <div class="warning" ng-show="showWarning()">Your ride has been ongoing for more than {{ msecToMinSec(timeConstraints.rentalTime).minutes }} minutes, {{ msecToMinSec(timeConstraints.rentalTime).seconds }} seconds.</div>
-
-        <div class="bikeBatteryStatus">The bike has {{ booking().bike.battery }}% battery left</div>
-        <p class="smallerText dark">If you want route directions or want to make sure that there is a free return station for you at your destination, please book a return station below. If not please ride the bike to your destination then return without booking below.</p>
-    </div>
-
-    <div class="actionButtons confirm">
-        <a ng-href="#/destinations">
-            <button class="confirmButton yes">Book return station</button>
-        </a>
-        <a ng-href="#/return">
-            <button class="confirmButton">Return bike without booking</button>
-        </a>
-    </div>
-</div>
+<a ng-href="#/booking">
+    <button class="bottomButton">Let's get started! <i class="fa fa-chevron-right"></i></button>
+</a>

@@ -1,6 +1,8 @@
 <div class="containExtra">
-
     Navigating to {{ destination.name }}
+    <div id="map"></div>
+    <div id="displayDirections"></div>
+    
     <a ng-href="#/return">
         <div class="almostBottom">
             <button class="bottomButton">Return Bike</button>
@@ -11,7 +13,7 @@
     <a ng-href="#/destinations">
         <button class="confirmButton yes" ng-click="unsetDestination()">Change Destination</button>
     </a>
-    <a ng-href="#/">
+    <a ng-href="#/myRide">
         <button class="confirmButton">Cancel Navigation</button>
     </a>
 </div>

@@ -1,4 +1,6 @@
 var app = angular.module('prototype', ['ngRoute', 'ngCookies']);
+// , 'uiGmapgoogle-maps'
+// 'ngAnimate',
 
 app.config(['$routeProvider',
 	function($routeProvider) {
@@ -24,7 +26,7 @@ app.config(['$routeProvider',
 		when('/unlock', {
 			templateUrl: 'partials/unlock.html',
 			controller: 'unlockCtrl',
-			redirectURL: '/',
+			redirectURL: '/myBooking',
 			requirements: ["activeBooking"]
 		}).
 		when('/destinations',{
@@ -49,7 +51,19 @@ app.config(['$routeProvider',
 			templateUrl: 'partials/success.html',
 			controller: 'successCtrl',
 			redirectURL: '/',
-			requirements: null
+			requirements: ["activeBooking", "unlockedBike"]
+		}).
+		when('/myRide',{
+			templateUrl: 'partials/ride.html',
+			controller: 'rideCtrl',
+			redirectURL: '/',
+			requirements: ["unlockedBike"]
+		}).
+		when('/myBooking',{
+			templateUrl: 'partials/activeBooking.html',
+			controller: 'activeBookingCtrl',
+			redirectURL: '/',
+			requirements: ["activeBooking"]
 		}).
 		otherwise({
 			redirectTo: "/"
@@ -57,10 +71,11 @@ app.config(['$routeProvider',
 	}
 ])
 // Comment this out to cancel navigation checks, might be useful for styling etc.
-.run(function($rootScope, $location, $cookies, Model){
+.run(function($rootScope, $location, Model){
 	$rootScope.$on( "$routeChangeStart", function(event, next, current) {
 		var routeRequirements = next.$$route.requirements;
-		
+		// console.log(event, next, current);
+		// console.log(next.$$route.originalPath)
 		if(routeRequirements != null){
 			for(requirement in routeRequirements){
 				if(routeRequirements[requirement] == "activeBooking"){
