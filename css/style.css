@@ -127,6 +127,10 @@ img {
     max-width: 100%;
 }
 
+.contain {
+    margin-bottom: 65px;
+}
+
 .locationList {
     width: 100%;
     margin-left: 0px;

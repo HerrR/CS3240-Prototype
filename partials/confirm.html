@@ -1,6 +1,7 @@
-<p class="largerText">Do you want to book a bike at {{ booking().location.name }}?</p>
-<p class="smallerText">The bike will stay booked for 15 minutes</p>
-
+<div class="contain">
+    <p class="largerText">Do you want to book a bike at {{ booking().location.name }}?</p>
+    <p class="smallerText">The bike will stay booked for 15 minutes</p>
+</div>
 <div class="confirm">
     <a ng-href="#/">
         <button class="confirmButton yes" ng-click="confirmBooking()">Yes</button>
