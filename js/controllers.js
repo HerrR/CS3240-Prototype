@@ -188,6 +188,7 @@ app.controller('activeBookingCtrl', function ($scope, Model, $location, $interva
     $scope.confirmCancellation = function(){
         if (confirm("Are you sure you want to cancel your booking?") == true) {
             Model.cancelBooking();
+            $location.path("/");
         }
     };
 
