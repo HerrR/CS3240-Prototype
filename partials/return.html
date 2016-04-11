@@ -17,10 +17,10 @@
 <div class="QRscanning" ng-show="userNotRetarded()">
     <div class="contain">
 
-        <div class="smallerText">
-            To lock your bike please scan the QR-code on the station
-        </div>
         <img src="img/QRscanningStuff.png" alt="QR Scanning image" style="width:100%" />
+        <div class="countDown">
+            To lock your bike please scan the QR-code on the station {{stationNum}}
+        </div>
         <a ng-click="returnBike()" ng-href="#/success">I am now pretending to scan a QR code</a>
     </div>
 
