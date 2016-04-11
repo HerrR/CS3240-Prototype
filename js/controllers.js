@@ -55,8 +55,10 @@ app.controller('AppCtrl', function ($scope, Model, $location, $window) {
                 console.log("Failed to get route somewhere ",status);
             }
         });
-
     };
+    $scope.$on("$routeChangeStart", function(event, next, current){
+        $scope.statusMessage = next.$$route.status_message;
+    });
 });
 
 app.controller('homeScreenCtrl', function ($scope, Model, $location) {
@@ -300,8 +302,6 @@ app.controller('destinationCtrl', function ($scope, Model, $location) {
         Model.setDestination(dest);
         $location.path("/navigation");
     };
-
-    // #################
 
     $scope.userPositionMarker;
 
