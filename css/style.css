@@ -6,7 +6,7 @@ html {
     background: #FFF;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 1em;
 }
 
 header {
@@ -45,7 +45,7 @@ ul {
 
 .infoText {
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1.1em;
     color: #155D8F;
     padding: 0% 5% 0% 5%;
 }
@@ -117,11 +117,11 @@ img {
 }
 
 .contain {
-    bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .containExtra {
-    bottom: 150px;
+    margin-bottom: 150px;
 }
 
 .locationList {
@@ -136,7 +136,7 @@ img {
     border-bottom-width: 1px;
     border-bottom-color: #FEE2CE;
     padding: 0% 0% 4% 5%;
-    font-size: 18px;
+    font-size: 1.2em;
     text-align: left;
 }
 
