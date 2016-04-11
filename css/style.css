@@ -39,8 +39,8 @@ ul {
 
 .logotype {
     display: block;
-    width: 50%;
-    margin: 15% auto 40px auto;
+    width: 40%;
+    margin: 5% auto 5% auto;
 }
 
 .infoText {
@@ -112,20 +112,16 @@ ul {
     margin-bottom: 50px;
 }
 
-.welcome {
-    height: 100%;
-}
-
 img {
     max-width: 100%;
 }
 
 .contain {
-    margin-bottom: 55px;
+    bottom: 60px;
 }
 
 .containExtra {
-    margin-bottom: 115px;
+    bottom: 150px;
 }
 
 .locationList {
