@@ -43,6 +43,37 @@ ul {
     margin: 5% auto 5% auto;
 }
 
+.rideInfo {
+    font-size: 1.3em;
+    margin-top: 30px;
+    font-weight: 400;
+}
+.rideInfo ul {
+    color: #F68438;
+    font-size: 2em;
+    margin: 0;
+}
+
+.rideInfo ul li.halfWidth {
+    display: inline-block;
+    width: 24%;
+}
+
+li span.small {
+    font-size: 0.5em;
+}
+
+.warning {
+    width: 80%;
+    margin: auto;
+    color: #D62525;
+    margin-top: 50px;
+}
+
+.welcomeText {
+    margin-top:50px;
+}
+    
 .infoText {
     font-weight: 400;
     font-size: 1.1em;
@@ -220,7 +251,7 @@ img {
 }
 
 #map {
-    height: 400px;
+    height: 350px;
 }
 
 @media screen and (min-width: 768px) and (min-height: 500px) {

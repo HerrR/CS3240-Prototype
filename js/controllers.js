@@ -224,36 +224,44 @@ app.controller('activeBookingCtrl', function ($scope, Model, $location, $interva
 app.controller('rideCtrl', function ($scope, Model, $location, $interval) {
     var timer;
     $scope.timeConstraints = Model.getTimeConstraints();
-
-    $scope.startpageState = "default";
-
+    $scope.chargeRates = Model.getChargeRates();
     $scope.timeleft = {
-        minutes: 0,
-        seconds: 0
+        minutes: null,
+        seconds: null
     };
+
+    $scope.timeLoaded = function(){
+        if($scope.timeleft.minutes == null){
+            return false;
+        } else {
+            return true;
+        }
+    }
 
     $scope.timesUp = function () {
         if (($scope.timeleft.minutes < 1) && ($scope.timeleft.seconds < 1)) {
-            // console.log("Times up!");
             return true;
         } else {
-            // console.log("Still got time to go!");
             return false;
         }
     };
 
     $scope.msecToMinSec = function (msec) {
-        return {
-            minutes: Math.floor(msec / 1000 / 60),
-            seconds: Math.floor((msec / 1000) % 60),
-        };
+        if(msec > 0){
+            return {
+                minutes: Math.floor(msec / 1000 / 60),
+                seconds: Math.floor((msec / 1000) % 60),
+            };
+        } else {
+            return {
+                minutes: msec / 1000 / 60,
+                seconds: (msec / 1000) % 60
+            }
+        }
     };
 
     $scope.showWarning = function () {
         if ($scope.timeleft.minutes < 0) {
-            if ($scope.startpageState == "confirmBooking") {
-                Model.cancelBooking();
-            }
             return true;
         } else {
             return false;
@@ -265,9 +273,19 @@ app.controller('rideCtrl', function ($scope, Model, $location, $interval) {
         $scope.timeleft = $scope.msecToMinSec(msecLeft);
     }, 1000);
 
-    $scope.bookingConfirmed = function () {
-        return Model.checkBookingConfirmation();
+    $scope.imposedFee = function(){
+        if($scope.timesUp()){
+            return Math.round(($scope.chargeRates * ( Math.abs($scope.timeleft.minutes*60) + Math.abs($scope.timeleft.seconds) )/60/60)*100) / 100;
+            // return 100;
+            // calculations here
+        } else {
+            return 0;
+        }
     };
+
+    // $scope.bookingConfirmed = function () {
+    //     return Model.checkBookingConfirmation();
+    // };
 
     $scope.booking = function () {
         return Model.getBooking();
