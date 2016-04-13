@@ -2,17 +2,16 @@
     <div id="map"></div>
     <div id="displayDirections"></div>
 	
-	<div class="rideInfo">
+	<div class="rideInfo" ng-hide="showWarning()">
 		Unlock Bike Within
-		<ul>
+		<ul class="halfWidth">
 			<li class="halfWidth"> {{ timeleft.minutes }} <span class="small">min</span></li>
 			<li class="halfWidth"> {{ timeleft.seconds }} <span class="small">sec</span></li>
 		</ul>
 	</div>
-    <!-- <div class="countDown" ng-hide="timesUp()">You have {{ timeleft.minutes }} minutes and {{timeleft.seconds }} seconds left to unlock your bike
-    </div> -->
 
-    <div class="warning" ng-show="showWarning()">You failed to pick up your bike in time, sorry!</div>
+
+    <div class="warning" ng-show="showWarning()">You failed to pick up your bike in time, sorry! You will be redirected to the starting page in {{ redirectWithin }} seconds.</div>
 
 </div>
 <div class="confirm">

@@ -144,10 +144,11 @@ app.controller('bookingCtrl', function ($scope, Model, $location) {
     $scope.initializeMap();
 });
 
-app.controller('activeBookingCtrl', function ($scope, Model, $location, $interval) {
+app.controller('activeBookingCtrl', function ($scope, Model, $location, $interval, $timeout) {
     var timer;
+    var redirectTimer;
     $scope.timeConstraints = Model.getTimeConstraints();
-
+    $scope.redirectWithin = 10;
     $scope.timeleft = {
         minutes: 0,
         seconds: 0
@@ -155,10 +156,8 @@ app.controller('activeBookingCtrl', function ($scope, Model, $location, $interva
 
     $scope.timesUp = function () {
         if (($scope.timeleft.minutes < 1) && ($scope.timeleft.seconds < 1)) {
-            // console.log("Times up!");
             return true;
         } else {
-            // console.log("Still got time to go!");
             return false;
         }
     }
@@ -171,8 +170,19 @@ app.controller('activeBookingCtrl', function ($scope, Model, $location, $interva
     }
 
     $scope.showWarning = function () {
-        if ($scope.timeleft.minutes < 0) {
+        if (($scope.timeleft.minutes) < 0 && ($scope.timeleft.seconds < 0)) {
             Model.cancelBooking();
+            $interval.cancel(timer);
+            if(redirectTimer === undefined){
+                redirectTimer = $interval(function() {
+                    if($scope.redirectWithin == 0){
+                        $interval.cancel(redirectTimer);
+                        $location.path("/");
+                    } else {
+                        $scope.redirectWithin = $scope.redirectWithin - 1;
+                    }
+                }, 1000);
+            }
             return true;
         } else {
             return false;
@@ -183,7 +193,6 @@ app.controller('activeBookingCtrl', function ($scope, Model, $location, $interva
         var msecLeft = $scope.timeConstraints.reservationTime - (new Date() - Model.getBooking().bookedAt);
         $scope.timeleft = $scope.msecToMinSec(msecLeft);
     }, 1000);
-
 
     $scope.booking = function () {
         return Model.getBooking();

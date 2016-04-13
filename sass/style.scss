@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700,300italic|Montserrat);
 // Sass variabler
 $someCoolColor: #fe0;
 
@@ -23,46 +24,340 @@ $someCoolColor: #fe0;
 	  		box-sizing: $style;
 }
 
-.something {
-	@include box-sizing(border-box)
-}
-
-.somethingElse{
-	@extend .something;
-	font-size:1.5em;
-}
-
-.anotherThign {
-	img {
-
-	}
-
-	&:hover {
-
-	}
-
-	&:active {
-
-	}
+body, html {
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 1em;
 }
 
 header {
-	background-color:black;
-	color:white;
+    background-color: black;
+    color: white;
 }
 
-.locationList {
-	.location {
-		cursor:pointer;
-	}
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.locationList .location {
+    cursor: pointer;
 }
 
 .navStuff {
-	display:block;
-	margin:auto;
-	width:50%;
-	margin-top:70px;
-	background-color:gray;
-	padding:20px;
-	color:white;
+    display: block;
+    margin: auto;
+    width: 50%;
+    margin-top: 70px;
+    background-color: gray;
+    padding: 20px;
+    color: white;
 }
+
+.logotype {
+    display: block;
+    width: 40%;
+    margin: 5% auto 5% auto;
+}
+
+.rideInfo {
+    font-size: 1.3em;
+    margin-top: 30px;
+    font-weight: 400;
+    ul {
+        color: #F68438;
+    	font-size: 2em;
+    	font-size:0;
+    	margin: 0;
+    	li {
+			font-size:30pt;
+			display:inline-block;
+			@include box-sizing(border-box);
+			padding:20px;
+    		&.halfWidth {
+    			width:50%;
+    		}
+    	}
+    }
+}
+li.halfWidth.ng-binding:nth-child(even){
+	text-align:left;
+}
+
+li.halfWidth.ng-binding:nth-child(odd){
+	text-align:right;
+}
+
+
+
+li span.small {
+    font-size: 0.5em;
+}
+
+.warning {
+    width: 80%;
+    margin: auto;
+    color: #D62525;
+    margin-top: 50px;
+}
+
+.welcomeText {
+    margin-top:50px;
+}
+    
+.infoText {
+    font-weight: 400;
+    font-size: 1.1em;
+    color: #155D8F;
+    padding: 0% 5% 0% 5%;
+}
+
+.info > img {
+    padding-top: 10%;
+}
+
+.projectName {
+    background: #363636;
+    color: #fff;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 2% 0% 2% 0%;
+    text-align: center;
+}
+
+.bottomButton,
+.backButton {
+    width: 100%;
+    height: 50px;
+    background: rgb(255, 168, 76);
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, rgba(255, 168, 76, 1) 0%, rgba(255, 123, 13, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(255, 168, 76, 1) 0%, rgba(255, 123, 13, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(255, 168, 76, 1) 0%, rgba(255, 123, 13, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffa84c', endColorstr='#ff7b0d', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    color: #FEE2CE;
+    border: none;
+    position: fixed;
+    left: 0;
+    bottom: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+.bottomButton.secondRow {
+    bottom: 50px;
+}
+
+.QRscanning {
+    width: 100%;
+}
+
+.QRscanning img {
+    display: block;
+    margin: auto;
+    max-width: 80%;
+}
+
+.procedureInfo {
+    margin-bottom: 20px;
+    font-family: 'Montserrat';
+}
+
+#container {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.contain {
+    padding-bottom: 50px;
+}
+
+.containExtra {
+    padding-bottom: 110px;
+}
+
+.locationList {
+    width: 100%;
+    margin-left: 0px;
+}
+
+.locationList > li {
+    background: #FFF;
+    margin-left: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #FEE2CE;
+    padding: 0% 0% 4% 5%;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.countDown,
+.bikeBatteryStatus {
+    text-align: center;
+    font-size: 30px;
+    color: #F68438;
+    padding-top: 5%;
+}
+
+.bikeBatteryStatus {
+    color: #155D8F;
+    font-size: 25px;
+    padding-top: 0%;
+}
+
+.largerText {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 35px;
+    color: #F68438;
+    padding: 5% 10% 0% 10%
+}
+
+.smallerText {
+    font-style: italic;
+    padding: 0% 5% 0% 5%;
+    color: #155D8F;
+}
+
+.dark {
+    color: #363636;
+}
+
+.confirmButton {
+    width: 50%;
+    display: block;
+    background: #FF8F2A;
+    color: #FEE2CE;
+    border: none;
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    float: left;
+}
+
+.confirm {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.yes {
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: #FC9D60;
+}
+
+.almostBottom button.bottomButton {
+    bottom: 50px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    /*margin-bottom: 60px;*/
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #FECDAC;
+}
+
+.rightAlignCircle {
+    float: right;
+    border-radius: 50%;
+    padding: 8px;
+    background-color: #FF8218;
+    color: #FEE2CE;
+    text-align: center;
+    font-size: 12px;
+    min-width: 15px;
+}
+
+#map {
+    height: 350px;
+}
+
+@media screen and (min-width: 768px) and (min-height: 500px) {
+    body {
+        -webkit-box-sizing: border-box;
+        moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 5% 0;
+    }
+    .wrapper {
+        /*overflow: scroll;*/
+        overflow-y: auto;
+        margin: auto;
+        max-width: 540px;
+        height: 960px;
+        max-height: 100%;
+        position: relative;
+        background-color: white;
+        -webkit-box-shadow: 0px 5px 45px -10px rgba(71, 71, 71, 0.4);
+        -moz-box-shadow: 0px 5px 45px -10px rgba(71, 71, 71, 0.4);
+        box-shadow: 0px 5px 45px -10px rgba(71, 71, 71, 0.4);
+    }
+    #container {
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        -webkit-box-sizing: border-box;
+        moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding-bottom: 50px;
+        min-height: 95%;
+    }
+    header {
+        height: 5%;
+    }
+    .bottomButton,
+    .backButton,
+    .confirmButton,
+    .confirm {
+        bottom: 0;
+        position: absolute;
+        /*border-right:1px solid #FECDAC;*/
+    }
+    .confirm {
+        position: initial;
+    }
+    .confirmButton.yes {
+        border-right: 1px solid #FECDAC;
+        left: 0%;
+    }
+    .confirmButton {
+        left: 50%;
+    }
+    .almostBottom button.bottomButton {
+        position: absolute;
+        bottom: 50px;
+    }
+};
+
+/* Medium devices (desktops, 992px and up) */
+
+@media screen and (min-width: 992px) {}
+
+;
+
+/* Large devices (large desktops, 1200px and up) */
+
+@media screen and (min-width: 1200px) {}
+
+;

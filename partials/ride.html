@@ -1,9 +1,9 @@
 <div class="contain">
     <img src="img/bikeIcon.png" style="width:40%">
-    <!-- <div class="countDown" ng-hide="timesUp()"><b>{{ timeleft.minutes }} minutes and {{ timeleft.seconds }} seconds</b> left of free time to use bike</div> -->
+
     <div class="rideInfo" ng-show="timeLoaded()">
         <span ng-hide="showWarning()">Free time left</span>
-        <ul ng-hide="showWarning()">
+        <ul ng-hide="showWarning()" class="halfWidth">
             <li class="halfWidth">{{ timeleft.minutes }} <span class="small">min</span> </li>
             <li class="halfWidth">{{ timeleft.seconds }} <span class="small">sec</span> </li>
         </ul>
@@ -27,10 +27,7 @@
             <li class="fullWidth">{{ booking().bike.battery }}%</li>
         </ul>
     </div>
-<!-- 
-    <div class="warning" ng-show="showWarning()">Your ride has been ongoing for more than {{ msecToMinSec(timeConstraints.rentalTime).minutes }} minutes, {{ msecToMinSec(timeConstraints.rentalTime).seconds }} seconds.</div>
 
-    <div class="bikeBatteryStatus">The bike has {{ booking().bike.battery }}% battery left</div> -->
     <p class="smallerText dark" style="margin-top:30px;">If you want route directions or want to make sure that there is a free return station for you at your destination, please book a return station below. If not please ride the bike to your destination then return without booking below.</p>
 </div>
 

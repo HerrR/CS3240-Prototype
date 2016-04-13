@@ -1,6 +1,12 @@
 <div class="contain">
     <p class="largerText">Your bike was successfully returned!</p>
-    <p class="largerText dark">Total ride cost: {{ rideCost }}$</p>
+    <div class="rideInfo">
+    	Ride Cost
+    	<ul>
+    		<li class="fullWidth">{{ rideCost }} <span class="small">$</span></li>
+    	</ul>
+    </div>
+    <!-- <p class="largerText dark">Total ride cost: {{ rideCost }}$</p> -->
 </div>
 <a ng-href="#/">
     <button class="bottomButton"><i class="fa fa-chevron-left"></i> Back to start</button>
