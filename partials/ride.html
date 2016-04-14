@@ -3,7 +3,7 @@
 
     <div class="rideInfo" ng-show="timeLoaded()">
         <span ng-hide="showWarning()">Free time left</span>
-        <ul ng-hide="showWarning()" class="halfWidth">
+        <ul ng-hide="showWarning()">
             <li class="halfWidth">{{ timeleft.minutes }} <span class="small">min</span> </li>
             <li class="halfWidth">{{ timeleft.seconds }} <span class="small">sec</span> </li>
         </ul>
@@ -28,14 +28,14 @@
         </ul>
     </div>
 
-    <p class="smallerText dark">If you want route directions or want to make sure that there is a free return station for you at your destination, please book a return station below. If not please ride the bike to your destination then return without booking below.</p>
-</div>
+    <p class="smallerText dark" style="margin-top:30px;">If you want route directions or want to make sure that there is a free return station for you at your destination, please book a return station below. If not please ride the bike to your destination then return without booking below.</p>
 
-<div class="actionButtons confirm">
-    <a ng-href="#/destinations">
-        <button class="confirmButton yes">Book return station</button>
-    </a>
-    <a ng-href="#/return">
-        <button class="confirmButton">Return bike without booking</button>
-    </a>
+    <div class="actionButtons confirm">
+        <a ng-href="#/destinations">
+            <button class="confirmButton yes">Book return station</button>
+        </a>
+        <a ng-href="#/return">
+            <button class="confirmButton">Return bike without booking</button>
+        </a>
+    </div>
 </div>

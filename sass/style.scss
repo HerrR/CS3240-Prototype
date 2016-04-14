@@ -7,29 +7,27 @@ $superLightOrange: #FBE8DB;
 $darkBlue: #155D8F;
 $white: #FFF;
 $darkGray: #363636;
-
 $buttonHeight: 50px;
-
-@mixin standardBoxShadow(){
-	-webkit-box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
-	   -moz-box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
-			box-shadow: 0px 5px 45px -10px rgba(71,71,71,0.4);
+@mixin standardBoxShadow() {
+    -webkit-box-shadow: 0px 5px 45px -10px rgba(71, 71, 71, 0.4);
+    -moz-box-shadow: 0px 5px 45px -10px rgba(71, 71, 71, 0.4);
+    box-shadow: 0px 5px 45px -10px rgba(71, 71, 71, 0.4);
 }
 
-@mixin customBoxShadow($v1, $v2, $v3, $v4, $v5){
-	-webkit-box-shadow: $v1 $v2 $v3 $v4 $v5;
-	   -moz-box-shadow: $v1 $v2 $v3 $v4 $v5;
-			box-shadow: $v1 $v2 $v3 $v4 $v5;
+@mixin customBoxShadow($v1, $v2, $v3, $v4, $v5) {
+    -webkit-box-shadow: $v1 $v2 $v3 $v4 $v5;
+    -moz-box-shadow: $v1 $v2 $v3 $v4 $v5;
+    box-shadow: $v1 $v2 $v3 $v4 $v5;
 }
 
-@mixin box-sizing($style){
-	-webkit-box-sizing: $style;
-	   -moz-box-sizing: $style;
-	 	-ms-box-sizing: $style;
-	  		box-sizing: $style;
+@mixin box-sizing($style) {
+    -webkit-box-sizing: $style;
+    -moz-box-sizing: $style;
+    -ms-box-sizing: $style;
+    box-sizing: $style;
 }
 
-@mixin fancyBackground(){
+@mixin fancyBackground() {
     background: rgb(255, 168, 76);
     /* Old browsers */
     background: -moz-linear-gradient(-45deg, rgba(255, 168, 76, 1) 0%, rgba(255, 123, 13, 1) 100%);
@@ -39,7 +37,7 @@ $buttonHeight: 50px;
     background: linear-gradient(135deg, rgba(255, 168, 76, 1) 0%, rgba(255, 123, 13, 1) 100%);
 }
 
-@mixin fancyBackground-small($start, $stop){
+@mixin fancyBackground-small($start, $stop) {
     background: rgb(255, 168, 76);
     /* Old browsers */
     background: -moz-linear-gradient(-45deg, rgba(255, 157, 54, 1) $start, rgba(255, 123, 13, 1) $stop);
@@ -49,18 +47,23 @@ $buttonHeight: 50px;
     background: linear-gradient(135deg, rgba(255, 157, 54, 1) $start, rgba(255, 123, 13, 1) $stop);
 }
 
-body, html {
+body,
+html {
     width: 100%;
     height: 100%;
-    background: $white;
+    background: #FFF;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
     font-size: 1em;
 }
 
+a {
+    text-decoration: none;
+    underline:none;
+}
+
 header {
-    // background-color: black;
-    background-color:$darkGray;
+    background-color: black;
     color: white;
 }
 
@@ -68,25 +71,17 @@ h1 {
     font-family: 'Montserrat', sans-serif;
 }
 
+button:focus {
+    outline:0;
+}
+
 ul {
     list-style: none;
     padding-left: 0;
 }
 
-
-
 .locationList .location {
     cursor: pointer;
-}
-
-.navStuff {
-    display: block;
-    margin: auto;
-    width: 50%;
-    margin-top: 70px;
-    background-color: gray;
-    padding: 20px;
-    color: white;
 }
 
 .logotype {
@@ -101,26 +96,28 @@ ul {
     font-weight: 400;
     ul {
         color: $NUSorange;
-    	font-size: 2em;
-    	font-size:0;
-    	margin: 0;
-    	li {
-			font-size:30pt;
-			display:inline-block;
-			@include box-sizing(border-box);
-			padding:20px;
-    		&.halfWidth {
-    			width:50%;
-    		}
-    	}
+        font-size: 2em;
+        font-size: 0;
+        margin: 0;
+        li {
+            font-size: 30pt;
+            display: inline-block;
+            @include box-sizing(border-box);
+            padding: 20px;
+            &.halfWidth{
+                width:50%;
+            }
+        }
     }
 }
-li.halfWidth.ng-binding:nth-child(even){
-	text-align:left;
+
+
+li.halfWidth.ng-binding:nth-child(even) {
+    text-align: left;
 }
 
-li.halfWidth.ng-binding:nth-child(odd){
-	text-align:right;
+li.halfWidth.ng-binding:nth-child(odd) {
+    text-align: right;
 }
 
 li span.small {
@@ -135,13 +132,13 @@ li span.small {
 }
 
 .welcomeText {
-    margin-top:50px;
+    margin-top: 50px;
 }
-    
+
 .infoText {
     font-weight: 400;
     font-size: 1.1em;
-    color: $darkBlue;
+    color: #155D8F;
     padding: 0% 5% 0% 5%;
 }
 
@@ -150,8 +147,8 @@ li span.small {
 }
 
 .projectName {
-    background: $darkGray;
-    color: $white;
+    background: #363636;
+    color: #fff;
     font-family: 'Ubuntu', sans-serif;
     padding: 2% 0% 2% 0%;
     text-align: center;
@@ -159,14 +156,18 @@ li span.small {
 
 .bottomButton,
 .backButton {
-    &:focus {
-        outline:none;
-    }
     width: 100%;
-    height: $buttonHeight;
-    background: rgb(255, 168, 76);
-    @include fancyBackground();
-    color: $superLightOrange;
+    height: 50px;
+    background: #ffa84c;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #ffa84c 0%, #ff7b0d 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #ffa84c 0%, #ff7b0d 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #ffa84c 0%, #ff7b0d 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    /* IE6-9 fallback on horizontal gradient */
+    color: #FEE2CE;
     border: none;
     position: fixed;
     left: 0;
@@ -176,7 +177,7 @@ li span.small {
 }
 
 .bottomButton.secondRow {
-    bottom: $buttonHeight;
+    bottom: 50px;
 }
 
 .QRscanning {
@@ -194,20 +195,23 @@ li span.small {
     font-family: 'Montserrat';
 }
 
-.wrapper {
-    position: relative;
-    height:100%;
+.pretendButton {
+    // background-color:$NUSorange;
+    @include fancyBackground();
+    width:80%;
+    display: block;
+    padding:20px;
+    color:$superLightOrange;
+    text-decoration: none;
+    margin:20px auto;
 }
 
 #container {
-    // width: 90%;
+    width: 90%;
     margin: auto;
-    @include box-sizing(border-box);
-    padding: 20px 5% 0 5%;
-    // margin-top: 20px;
+    margin-top: 20px;
     text-align: center;
-    // margin-bottom: $buttonHeight;
-    height:95%;
+    margin-bottom: 50px;
 }
 
 img {
@@ -215,13 +219,11 @@ img {
 }
 
 .contain {
-    padding-bottom:$buttonHeight;
-    // padding-bottom: 50px;
+    padding-bottom: 50px;
 }
 
 .containExtra {
-    padding-bottom:$buttonHeight*2 + 10px;
-    // padding-bottom: 110px;
+    padding-bottom: 110px;
 }
 
 .locationList {
@@ -230,12 +232,12 @@ img {
 }
 
 .locationList > li {
-    background: $white;
+    background: #FFF;
     margin-left: 0px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    border-bottom-color: $lightOrange;
-    padding: 0% 0% 4% 5%;
+    border-bottom-color: #FEE2CE;
+    padding: 4% 0% 4% 5%;
     font-size: 1.2em;
     text-align: left;
 }
@@ -249,7 +251,7 @@ img {
 }
 
 .bikeBatteryStatus {
-    color: $darkBlue;
+    color: #155D8F;
     font-size: 25px;
     padding-top: 0%;
 }
@@ -259,33 +261,28 @@ img {
     font-weight: 400;
     font-size: 35px;
     color: $NUSorange;
-    padding: 5% 10% 0% 10%
+    padding: 5% 10% 0% 10%;
 }
 
 .smallerText {
     font-style: italic;
-    padding: 0% 2% 0% 2%;
-    color: $darkBlue;
-    margin:0;
-    margin-bottom:20px;
+    padding: 0% 5% 0% 5%;
+    color: #155D8F;
 }
 
 .dark {
-    color: $darkGray;
+    color: #363636;
 }
 
 .confirmButton {
-    &:focus{
-        outline:0;
-    }
     width: 50%;
     display: block;
-    background: $NUSorange;
-    color: $superLightOrange;
+    background: #FF8F2A;
+    color: #FEE2CE;
     border: none;
     padding: 0;
     margin: 0;
-    height: $buttonHeight;
+    height: 50px;
     float: left;
     @include fancyBackground-small(0%, 100%);
 }
@@ -309,17 +306,18 @@ img {
     left: 0;
     position: fixed;
     width: 100%;
+    /*margin-bottom: 60px;*/
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    border-bottom-color: $lightOrange;
+    border-bottom-color: #FECDAC;
 }
 
 .rightAlignCircle {
     float: right;
     border-radius: 50%;
     padding: 8px;
-    background-color: $NUSorange;
-    color: $superLightOrange;
+    background-color: #FF8218;
+    color: #FEE2CE;
     text-align: center;
     font-size: 12px;
     min-width: 15px;
@@ -329,41 +327,18 @@ img {
     height: 350px;
 }
 
-a {
-    text-decoration: none;
-    color:$NUSorange;
-}
-
-.pretendButton {
-    // background-color:$NUSorange;
-    @include fancyBackground();
-    width:80%;
-    display: block;
-    padding:20px;
-    color:$superLightOrange;
-    text-decoration: none;
-    margin:20px auto;
-}
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px){
     body {
-        @include box-sizing(border-box);
+        -webkit-box-sizing: border-box;
+        moz-box-sizing: border-box;
+        box-sizing: border-box;
         padding: 5% 0;
     }
-    @media (max-height: 500px) {
-        body {
-            padding: 1% 0;
-        }
-        .wrapper {
-            font-size:0.8em;
-            max-width: 325px;
-        }
-        
-    }
     .wrapper {
+        /*overflow: scroll;*/
         overflow-y: auto;
         margin: auto;
-        max-width: 350px;
+        max-width: 375px;
         height: 960px;
         max-height: 100%;
         position: relative;
@@ -392,12 +367,13 @@ a {
     .confirm {
         bottom: 0;
         position: absolute;
+        /*border-right:1px solid #FECDAC;*/
     }
     .confirm {
         position: initial;
     }
     .confirmButton.yes {
-        border-right: 1px solid $lightOrange;
+        border-right: 1px solid #FECDAC;
         left: 0%;
     }
     .confirmButton {
@@ -407,52 +383,31 @@ a {
         position: absolute;
         bottom: 50px;
     }
-    @media (min-height:800px){
-        .wrapper{
-            max-width:450px;
-        }
-    }
-};
-
-/* Medium devices (desktops, 992px and up) */
-
-@media screen and (min-width: 992px) {
-    .wrapper {
-        max-width:400px;
-    }
-    @media (max-height:700px){
+    @media (max-height: 800px){
         body {
-            padding:1% 0%;
+            padding:1% 0;
         }
     }
+}
 
-    @media (min-height:800px){
-        .wrapper{
-            max-width:450px;
-        }
-    }
-
-};
-
-// /* Large devices (large desktops, 1200px and up) */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px){
     .wrapper {
-        max-width:450px;
+        max-width: 400px;
     }
-
-    body {
-        padding: 1% 0;
-    }
-
-    @media (min-height:800px){
+    @media (max-height:800px){
         body {
-            padding:5% 0;
+            padding: 1% 0;
         }
     }
-};
+}
 
-// @media screen and (min-width: 1500px){
-//     .wrapper {
-//         max-width:540px;
-//     }
-// }
+@media screen and (min-width: 1200px){
+    .wrapper {
+        max-width: 520px;
+    }
+    @media (max-height: 800px){
+        body {
+            padding: 1% 0;
+        }
+    }
+}

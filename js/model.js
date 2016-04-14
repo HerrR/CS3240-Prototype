@@ -11,8 +11,6 @@ app.factory('Model', function () {
 	var userPosition = initialUserPosition;
 
 	var timeConstraints = {
-		// reservationTime: 0.1*60*1000,
-		// rentalTime: 0.2*60*1000
 		reservationTime: 15*60*1000,
 		rentalTime: 60*60*1000
 	};
