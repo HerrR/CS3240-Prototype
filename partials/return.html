@@ -21,7 +21,11 @@
         <div class="countDown">
             To lock your bike please scan the QR-code on the station {{stationNum}}
         </div>
-        <a ng-click="returnBike()" ng-href="#/success">I am now pretending to scan a QR code</a>
+        <a ng-click="returnBike()" ng-href="#/success">
+            <div class="pretendButton">
+                I am now pretending to scan a QR code
+            </div>
+        </a>
     </div>
 
     <div class="confirm">

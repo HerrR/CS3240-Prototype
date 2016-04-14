@@ -8,7 +8,7 @@ body, html {
   font-size: 1em; }
 
 header {
-  background-color: black;
+  background-color: #363636;
   color: white; }
 
 h1 {
@@ -84,7 +84,7 @@ li span.small {
 
 .projectName {
   background: #363636;
-  color: #fff;
+  color: #FFF;
   font-family: 'Ubuntu', sans-serif;
   padding: 2% 0% 2% 0%;
   text-align: center; }
@@ -94,21 +94,23 @@ li span.small {
   width: 100%;
   height: 50px;
   background: #ffa84c;
+  background: #ffa84c;
   /* Old browsers */
   background: -moz-linear-gradient(-45deg, #ffa84c 0%, #ff7b0d 100%);
   /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, #ffa84c 0%, #ff7b0d 100%);
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, #ffa84c 0%, #ff7b0d 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  /* IE6-9 fallback on horizontal gradient */
-  color: #FEE2CE;
+  color: #FBE8DB;
   border: none;
   position: fixed;
   left: 0;
   bottom: 0px;
   padding: 0;
   margin: 0; }
+  .bottomButton:focus,
+  .backButton:focus {
+    outline: none; }
 
 .bottomButton.secondRow {
   bottom: 50px; }
@@ -125,12 +127,19 @@ li span.small {
   margin-bottom: 20px;
   font-family: 'Montserrat'; }
 
+.wrapper {
+  position: relative;
+  height: 100%; }
+
 #container {
-  width: 90%;
   margin: auto;
-  margin-top: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 5% 0 5%;
   text-align: center;
-  margin-bottom: 50px; }
+  height: 95%; }
 
 img {
   max-width: 100%; }
@@ -150,7 +159,7 @@ img {
   margin-left: 0px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #FEE2CE;
+  border-bottom-color: #FECDAC;
   padding: 0% 0% 4% 5%;
   font-size: 1.2em;
   text-align: left; }
@@ -176,8 +185,10 @@ img {
 
 .smallerText {
   font-style: italic;
-  padding: 0% 5% 0% 5%;
-  color: #155D8F; }
+  padding: 0% 2% 0% 2%;
+  color: #155D8F;
+  margin: 0;
+  margin-bottom: 20px; }
 
 .dark {
   color: #363636; }
@@ -185,13 +196,22 @@ img {
 .confirmButton {
   width: 50%;
   display: block;
-  background: #FF8F2A;
-  color: #FEE2CE;
+  background: #F68438;
+  color: #FBE8DB;
   border: none;
   padding: 0;
   margin: 0;
   height: 50px;
-  float: left; }
+  float: left;
+  background: #ffa84c;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ff9d36 0%, #ff7b0d 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ff9d36 0%, #ff7bff 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ff9d36 0%, #ff7b0d 100%); }
+  .confirmButton:focus {
+    outline: 0; }
 
 .confirm {
   position: fixed;
@@ -202,14 +222,20 @@ img {
 .yes {
   border-right-style: solid;
   border-right-width: 2px;
-  border-right-color: #FC9D60; }
+  border-right-color: #FC9D60;
+  background: #ffa84c;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ff9d36 50%, #ff7b0d 200%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ff9d36 50%, #ff7bff 200%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ff9d36 50%, #ff7b0d 200%); }
 
 .almostBottom button.bottomButton {
   bottom: 50px;
   left: 0;
   position: fixed;
   width: 100%;
-  /*margin-bottom: 60px;*/
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #FECDAC; }
@@ -218,8 +244,8 @@ img {
   float: right;
   border-radius: 50%;
   padding: 8px;
-  background-color: #FF8218;
-  color: #FEE2CE;
+  background-color: #F68438;
+  color: #FBE8DB;
   text-align: center;
   font-size: 12px;
   min-width: 15px; }
@@ -227,18 +253,44 @@ img {
 #map {
   height: 350px; }
 
-@media screen and (min-width: 768px) and (min-height: 500px) {
+a {
+  text-decoration: none;
+  color: #F68438; }
+
+.pretendButton {
+  background: #ffa84c;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ffa84c 0%, #ff7b0d 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ffa84c 0%, #ff7b0d 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ffa84c 0%, #ff7b0d 100%);
+  width: 80%;
+  display: block;
+  padding: 20px;
+  color: #FBE8DB;
+  text-decoration: none;
+  margin: 20px auto; }
+
+@media screen and (min-width: 768px) {
   body {
     -webkit-box-sizing: border-box;
-    moz-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 5% 0; }
+    padding: 5% 0; } }
+@media screen and (min-width: 768px) and (max-height: 500px) {
+  body {
+    padding: 1% 0; }
 
   .wrapper {
-    /*overflow: scroll;*/
+    font-size: 0.8em;
+    max-width: 325px; } }
+@media screen and (min-width: 768px) {
+  .wrapper {
     overflow-y: auto;
     margin: auto;
-    max-width: 540px;
+    max-width: 350px;
     height: 960px;
     max-height: 100%;
     position: relative;
@@ -266,8 +318,7 @@ img {
   .confirmButton,
   .confirm {
     bottom: 0;
-    position: absolute;
-    /*border-right:1px solid #FECDAC;*/ }
+    position: absolute; }
 
   .confirm {
     position: initial; }
@@ -282,7 +333,27 @@ img {
   .almostBottom button.bottomButton {
     position: absolute;
     bottom: 50px; } }
+@media screen and (min-width: 768px) and (min-height: 800px) {
+  .wrapper {
+    max-width: 450px; } }
 /* Medium devices (desktops, 992px and up) */
-/* Large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 992px) {
+  .wrapper {
+    max-width: 400px; } }
+@media screen and (min-width: 992px) and (max-height: 700px) {
+  body {
+    padding: 1% 0%; } }
+@media screen and (min-width: 992px) and (min-height: 800px) {
+  .wrapper {
+    max-width: 450px; } }
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 450px; }
+
+  body {
+    padding: 1% 0; } }
+@media screen and (min-width: 1200px) and (min-height: 800px) {
+  body {
+    padding: 5% 0; } }
 
 /*# sourceMappingURL=style.css.map */

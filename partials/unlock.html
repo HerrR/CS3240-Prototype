@@ -1,14 +1,16 @@
-<div class="QR">
-    <a ng-href="#/myBooking">
-        <button class="backButton"><i class="fa fa-chevron-left"></i> Back</button>
-    </a>
-    <div class="contain">
-        <img src="img/QRscanningStuff.png" alt="QR Scanning image" />
-        <div class="countDown">
-            To unlock your bike please scan the QR-code on station {{ stationNumber }}
-        </div>
-        <br />
-
-        <a ng-href="#/myRide" ng-click="unlockBike()">I promise that I have pretended to scan a QR code</a>
+<div class="contain">
+    <img src="img/QRscanningStuff.png" alt="QR Scanning image" />
+    <div class="countDown">
+        To unlock your bike please scan the QR-code on station {{ stationNumber }}
     </div>
-</div>
+    <br />
+
+    <a ng-href="#/myRide" ng-click="unlockBike()">
+        <div class="pretendButton">
+            I promise that I have pretended to scan a QR code
+        </div>
+    </a>
+    </div>
+<a ng-href="#/myBooking">
+    <button class="backButton"><i class="fa fa-chevron-left"></i> Back</button>
+</a>
