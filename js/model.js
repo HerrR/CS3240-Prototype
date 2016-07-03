@@ -11,8 +11,10 @@ app.factory('Model', function () {
 	var userPosition = initialUserPosition;
 
 	var timeConstraints = {
-		reservationTime: 15*60*1000,
-		rentalTime: 60*60*1000
+		reservationTime: 0.2*60*1000,
+		rentalTime: 0.2*60*1000
+		// reservationTime: 15*60*1000,
+		// rentalTime: 60*60*1000
 	};
 
 	// Generate random bikes
